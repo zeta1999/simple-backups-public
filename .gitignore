@@ -1,0 +1,13 @@
+/target/
+**/*.rs.bk
+.DS_Store
+*.swp
+vault.bin
+.idea/
+.vscode/
+android/.gradle/
+android/app/build/
+android/local.properties
+ios/DerivedData/
+*.xcuserstate
+android/app/libs/*.jar

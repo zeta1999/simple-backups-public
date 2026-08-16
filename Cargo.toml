@@ -1,0 +1,51 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/backups-core",
+    "crates/backups-store",
+    "crates/backups-engine",
+    "crates/backups-cli",
+    "crates/backups-transfer",
+    "crates/backups-ffi",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+authors = ["simple-tools"]
+
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+clap = { version = "4", features = ["derive", "env"] }
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6"
+sha2 = "0.10"
+hex = "0.4"
+tempfile = "3"
+walkdir = "2"
+globset = "0.4"
+rpassword = "7"
+zeroize = "1"
+bytes = "1"
+async-trait = "0.1"
+
+# Sibling simple-tools crates (public tree → public siblings)
+simple_network = { path = "../simple-network-public", default-features = false }
+simple-secrets = { path = "../simple-secrets-public" }
+secure-memory = { path = "../rust-secure-memory-public/crates/secure-memory" }
+
+# Internal crates
+backups-core = { path = "crates/backups-core" }
+backups-store = { path = "crates/backups-store" }
+backups-engine = { path = "crates/backups-engine" }
+backups-transfer = { path = "crates/backups-transfer" }
+backups-ffi = { path = "crates/backups-ffi" }

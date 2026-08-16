@@ -1,0 +1,19 @@
+[package]
+name = "backups-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Scan, snapshot, restore, and verify engines"
+
+[dependencies]
+anyhow = { workspace = true }
+backups-core = { workspace = true }
+backups-store = { workspace = true }
+chrono = { workspace = true }
+globset = { workspace = true }
+walkdir = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+serde_json = { workspace = true }
+backups-core = { workspace = true }

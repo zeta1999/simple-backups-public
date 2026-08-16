@@ -1,0 +1,36 @@
+[package]
+name = "backups-ffi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "C ABI for simple-backups (Android / iOS / embedders)"
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+name = "backups_ffi"
+
+[features]
+default = []
+pqc = [
+    "backups-transfer/pqc",
+    "dep:backups-engine",
+    "dep:backups-store",
+    "dep:tokio",
+    "dep:hex",
+    "dep:anyhow",
+]
+jni = ["dep:jni"]
+
+[dependencies]
+backups-core = { workspace = true }
+backups-transfer = { workspace = true }
+backups-engine = { workspace = true, optional = true }
+backups-store = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true }
+hex = { workspace = true, optional = true }
+anyhow = { workspace = true, optional = true }
+libc = "0.2"
+jni = { version = "0.21", default-features = false, optional = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

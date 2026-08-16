@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desktop peer (host:port)"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/proxy_addr_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="192.168.1.100:8443"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch Directories (JSON)"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/watch_dirs_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:minLines="4"
+        android:gravity="top"
+        android:fontFamily="monospace"
+        android:textSize="12sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+</LinearLayout>

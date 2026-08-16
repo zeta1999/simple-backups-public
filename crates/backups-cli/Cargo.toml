@@ -1,0 +1,28 @@
+[package]
+name = "backups-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "simple-backups command-line interface"
+default-run = "simple-backups"
+
+[[bin]]
+name = "simple-backups"
+path = "src/main.rs"
+
+[features]
+default = []
+pqc = ["backups-transfer/pqc"]
+
+[dependencies]
+anyhow = { workspace = true }
+backups-core = { workspace = true }
+backups-store = { workspace = true }
+backups-engine = { workspace = true }
+backups-transfer = { workspace = true }
+clap = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

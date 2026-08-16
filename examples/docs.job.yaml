@@ -1,0 +1,12 @@
+name: docs
+source: ~/Documents
+repo: ~/.local/share/simple-backups/repos/docs
+exclude:
+  - "*.tmp"
+  - "*.swp"
+  - "**/.DS_Store"
+  - "**/.git/**"
+schedule: "0 2 * * *"
+message: nightly docs
+keep_last: 14
+gc_after_prune: true
